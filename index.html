@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JSX and Babel</title>
+    <!-- Font Awesome for icons -->
+    <script
+      src="https://kit.fontawesome.com/40b9f92948.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      /* Set the body to occupy the full height of the viewport and center its contents */
+      body {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0; /* Removes default margin for consistency */
+      }
+
+      /* Main component container styles */
+      .main-component {
+        border: 2px solid lightgray; /* Light gray border around the component */
+        border-radius: 8px; /* Rounded corners for the container */
+        width: 400px; /* Fixed width */
+        height: 270px; /* Fixed height */
+        display: flex; /* Flexbox for layout */
+        flex-direction: column; /* Stack children vertically */
+        align-items: center; /* Center children horizontally */
+        background-color: #fff; /* White background for contrast */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+      }
+
+      /* Icon styles */
+      i {
+        font-size: 50px; /* Large font size for the icon */
+        margin-top: 20px; /* Space above the icon */
+        color: #2d9cdb; /* Color the icon for visual appeal */
+      }
+
+      /* Heading styles */
+      h1 {
+        margin-top: 30px; /* Space above the heading */
+        margin-bottom: 0; /* Remove bottom margin for consistency */
+        font-size: 24px; /* Larger font size for emphasis */
+      }
+
+      /* Paragraph styles */
+      p {
+        font-size: 20px; /* Slightly smaller font size */
+        color: grey; /* Grey color for a softer look */
+        margin-top: 10px; /* Space above the paragraph */
+        text-align: center; /* Center the text */
+        padding: 0 20px; /* Add some padding for better readability */
+      }
+
+      /* Container for input and button */
+      .input {
+        margin-top: 20px; /* Space above the input */
+      }
+
+      /* Input field styles */
+      input {
+        width: 200px; /* Fixed width for the input field */
+        margin-right: 15px; /* Space between input and button */
+        height: 30px; /* Fixed height */
+        border: none; /* Remove default border */
+        border-radius: 20px; /* Rounded corners for input */
+        padding-left: 10px; /* Padding inside the input */
+        font-size: 15px; /* Font size for input text */
+        background-color: lightblue; /* Light blue background for the input */
+        outline: none; /* Remove default outline on focus */
+      }
+
+      /* Button styles */
+      button {
+        height: 35px; /* Fixed height for the button */
+        width: 100px; /* Fixed width for the button */
+        border-radius: 20px; /* Rounded corners */
+        border: none; /* Remove default border */
+        background-color: rgb(89, 161, 244); /* Blue background color */
+        color: white; /* White text color */
+        font-size: 15px; /* Font size for button text */
+        cursor: pointer; /* Pointer cursor on hover */
+        transition: background-color 0.3s; /* Smooth transition for hover effect */
+      }
+
+      /* Button hover effect */
+      button:hover {
+        background-color: rgb(75, 135, 204); /* Darker blue on hover */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Root div where the React application will be rendered -->
+    <div id="root"></div>
+
+    <!-- React and ReactDOM libraries from a CDN -->
+    <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+
+    <!-- Babel standalone for transpiling JSX to JavaScript in the browser -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Main React code written inside a script with type 'text/babel' for JSX syntax -->
+    <script type="text/babel">
+      // Function component for the main UI component
+      function MainComponent() {
+        return (
+          <div className="main-component">
+            {/* Font Awesome icon */}
+            <i className="fa-solid fa-message"></i>
+            {/* Main heading */}
+            <h1>SUBSCRIBE</h1>
+            {/* Subheading text */}
+            <p>Subscribe to our newsletter & stay up to date!</p>
+            {/* Input field and button for subscribing */}
+            <div className="input">
+              <input type="text" placeholder="john@doe.net" />
+              <button>Subscribe</button>
+            </div>
+          </div>
+        );
+      }
+
+      // Main App component that renders the MainComponent
+      function App() {
+        return (
+          <>
+            {/* Rendering the main component inside the App */}
+            <MainComponent />
+          </>
+        );
+      }
+
+      // Rendering the React App into the root div
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(<App />);
+    </script>
+  </body>
+</html>
